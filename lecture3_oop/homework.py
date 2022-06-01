@@ -149,7 +149,7 @@ kate.person_buy_a_house(house3)
 realtor.steal_money(kate, house3)
 
 print('------------------------------------------------')
-Kim = Human('Kate', 22, 30000, False)
+Kim = Human('Kim', 22, 30000, False)
 Kim.person_info()
 Kim.person_make_money()
 realtor.discount(small_house)
