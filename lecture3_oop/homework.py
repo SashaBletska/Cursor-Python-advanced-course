@@ -65,7 +65,8 @@ class SmallHouse(House):
 
     def small_house_info(self):
         print(
-            f'-- There is also a small house "{self.house_name}" with a required area of {self.house_area} square meters')
+            f'-- There is also a small house "{self.house_name}" '
+            f'   with a required area of {self.house_area} square meters')
 
     def small_house_discount(self):
         self.house_cost = int(self.house_cost - self.house_cost * self.house_discount / 100)
