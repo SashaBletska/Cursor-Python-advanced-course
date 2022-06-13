@@ -31,7 +31,7 @@ class Human(Person, ABC):
               f'Buyer age: {self.age}.')
 
     def person_make_money(self):
-        self.availability_of_money += 1000
+        self.availability_of_money += random.randint(400, 1000)
         print(f'Looking for house up to {self.availability_of_money}$.')
 
     def person_buy_a_house(self, house):
