@@ -10,5 +10,4 @@ def hello():
 @app.route("/add/<x>/<y>")
 def adding(x, y):
     a = int(x) + int(y)
-    b = str(a)
-    return b
+    return render_template("adding.html", variable=a)
