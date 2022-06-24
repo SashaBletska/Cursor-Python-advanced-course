@@ -1,0 +1,24 @@
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: rgba(121, 118, 118, 0.1);
+}
+
+.bg-dark .navbar-nav .nav-item>a {
+    color: white !important;
+}
+
+.card {
+    margin: 25px 25px 25px 25px;
+}
+
+.main-title {
+    margin: 40px 40px 40px 120px;
+    color: green;
+    font-weight: bolder;
+    font-size: 300%;
+}
+
+.user-title {
+    margin: 40px 40px 40px 100px;
+    color: rgb(8, 126, 194);
+}
