@@ -77,6 +77,19 @@ def update(id):
 @app.route("/users/delete/<int:id>")
 def delete(id):
     users = get_users()
-    del users[id - 1]
+    users_new = []
+    id_new = 0
+    for user in users:
+        if user["id"] != id:
+            id_new += 1
+            user_new = {
+                "id": id_new,
+                "email": user["email"],
+                "first_name": user["first_name"],
+                "last_name": user["last_name"],
+                "work_area": user["work_area"]
+            }
+            users_new.append(user_new)
+    users = users_new
     write_users(users)
     return redirect("/")
