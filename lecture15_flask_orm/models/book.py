@@ -7,4 +7,3 @@ class Book(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     book_title = db.Column(db.String(300), nullable=False, unique=True)
     book_description = db.Column(db.String(500), nullable=False)
-
