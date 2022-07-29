@@ -20,7 +20,7 @@ print(search_phone())
 print("=========================================================================================================")
 print("2. Write a Python program basic validation for email. Local part should be consisted of lower/upper case,\n"
       "number, underscore and dot. Domain part - the same but dot symbol could not be the first character.")
-pattern = r'[A-Za-z0-9_\.]{1,255}@[^\.][A-Za-z0-9_\.]{1,255}\.[A-Za-z0-9_\.]{1,10}'
+pattern = r'^[^\.][A-Za-z0-9_\.]{1,255}[^\.]@[^\.][A-Za-z0-9_\.]{1,255}\.[A-Za-z0-9_\.]{1,10}[^\.]$'
 text = 'cursor.test@cursor.com.ua'
 res_email = re.findall(pattern=pattern, string=text)
 
