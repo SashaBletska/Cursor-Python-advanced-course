@@ -3,7 +3,7 @@ import re
 print("=======================================================")
 print("1. Write a Python program which search a phone numbers.")
 pattern = r'\b[\d]{3}-?[\d]{2}-?[\d]{2}\b'
-text = 'Hello, my phone numbers is 125-98-70 and 8908934'
+text = 'Hello, my phone numbers is 125-98-70 and 8908934 and 908-98-30'
 res_phone = re.findall(pattern=pattern, string=text)
 
 
