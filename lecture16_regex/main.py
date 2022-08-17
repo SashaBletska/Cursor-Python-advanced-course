@@ -38,7 +38,7 @@ print(email_validity())
 print("=======================================================================")
 print("3. Write a Python program to remove redundant zeros from an IP address.")
 pattern = r'^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$'
-text = '010.0.001.200'
+text = '200.049.000.010'
 
 res_ip_digits = re.findall(pattern=pattern, string=text)
 res_to_str = '.'.join([str(elem) for elem in res_ip_digits])
@@ -50,27 +50,29 @@ print("============================================================")
 print("4. Write a Python program that check if IP address is valid.")
 
 pattern = r'^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$'
-pattern_del_zero = r'\b0+(\d)'
-pattern_digits = r'\d{1,3}'
-text = '0.002.00.444'
+pattern_values = r'\d{1,3}'
+text = '200.049.000.010'
 
-ip_values = re.findall(pattern=pattern_digits, string=text)
-del_zero = re.sub(r'\b0+(\d)', r'\1', text)
+ip_values = re.findall(pattern=pattern_values, string=text)
+res_ip_digits = re.findall(pattern=pattern, string=text)
+res_to_str = '.'.join([str(elem) for elem in res_ip_digits])
+del_zero = re.sub(r'\b0+(\d)', r'\1', res_to_str)
 
 
 def validity():
     if len(ip_values) != 4:
-        return f"{text} - invalid ip address, address must contain 4 numbers and not more than 255"
+        return f"{text} - invalid ip address, address must contain 4 numbers separated by point and not more than 255"
     elif del_zero:
         for m in ip_values:
             if int(m) > 255:
-                return f"{text} - invalid ip address, address must contain 4 numbers and not more than 255"
+                return f"{text} - invalid ip address, address must contain 4 numbers separated by point " \
+                       f"and not more than 255"
             elif int(ip_values[-1]) < 255:
                 return f"{del_zero} - valid ip address"
             else:
                 continue
     else:
-        return f"{text} - invalid ip address, address must contain 4 numbers and not more than 255"
+        return f"{text} - invalid ip address, address must contain 4 numbers separated by point and not more than 255"
 
 
 print(validity())
