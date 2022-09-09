@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Category "{{ category.category_title }}" contains such products:</h1>
+<div class="container">
+    <div class="row">
+        <div class="cards-list">
+            {% for product in products%}
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item list-group-item-primary">{{ product.title }}</li>
+                </ul>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
